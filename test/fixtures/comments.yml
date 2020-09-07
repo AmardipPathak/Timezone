@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comm_name: MyString
+  comm_text: MyString
+  user: one
+  timesheet: one
+
+two:
+  comm_name: MyString
+  comm_text: MyString
+  user: two
+  timesheet: two

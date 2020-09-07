@@ -1,0 +1,29 @@
+<h1>edit Timesheet</h1>
+<%= form_with(model:@timesheet,local:true) do |form|%>
+<% if @timesheet.errors.any? %>
+<div>
+      <% @timesheet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+  </div>
+<% end %>
+<div>
+  <%=form.label :timesheet_name%>
+  <%=form.text_field :time_name%>
+
+</div>
+
+<div>
+  <%=form.label :timesheet_date%>
+  <%=form.date_field :time_date%>
+
+</div>
+<div>
+  <%=form.label :timesheet_for%>
+  <%=form.text_field :time_for%>
+</div>
+<div>
+	<%=form.submit "Update timesheet"%>
+</div>
+
+<%end%>

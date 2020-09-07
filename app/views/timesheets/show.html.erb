@@ -1,0 +1,45 @@
+<p>
+	<strong>timesheet Name:</strong>
+	<%=@timesheet.time_name%>
+
+</p>
+<p>
+	<strong>timesheet date:</strong>
+	<%=@timesheet.time_date%>
+</p>
+<p>
+	<strong>timesheet for:</strong>
+	<%=@timesheet.time_for%>
+</p>
+
+<h3 style="color: green;">All Comment</h3>
+<% @timesheet.comments.each do |comment|%>
+<p>
+	<strong>Commenter Name:</strong>
+	<%=comment.comm_name%>
+</p>
+<p>
+	<strong>comment text:</strong>
+	<%=comment.comm_text%>
+</p>
+<%end%>
+
+<h3>Write a Comment</h3>
+<%= form_with(model: [@timesheet, @timesheet.comments.build], local: true) do |form| %>
+  <div>
+		<%= form.label :commenter_name %>
+		<%= form.text_field :comm_name %>
+	</div>
+
+	<div>
+		<%= form.label :comment_text %>
+		<%= form.text_field :comm_text %>
+	</div>
+
+	<div>
+		<%= form.submit "Post Comment"%>
+	</div>
+<% end %>
+
+
+
