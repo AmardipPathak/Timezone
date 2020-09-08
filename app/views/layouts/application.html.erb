@@ -13,9 +13,10 @@
     <%if user_signed_in?%>
       <h1 style="text-align: center;color: red;">TimeZone Application</h1>
       <div style="font-size: 30px;text-align: center;">
-      <h3>SignInAs:<%=current_user.email%></h3>
+        <h3>SignInAs:<%=current_user.email%></h3>
         <%=link_to "Logout",destroy_user_session_path,method: :delete%>|
         <%=link_to "All Timesheet",timesheets_path %>
+      </div>
         
     <%else%>
       <h1 style="text-align: center;color: red;">TimeZone Application</h1>
@@ -27,7 +28,7 @@
 
       <% flash.each do |type, msg| %>
         <div class="alert alert-info">
-          <%= msg %>
+          <div style="color:green;font-size: 30px;"><%= msg %></div>
         </div>
       <% end %>
 
